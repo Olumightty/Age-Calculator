@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="container">
+      <div class="for">
+        <form action="" method="get" class="calculator">
+            <label class="day" for="day">DAY</label>
+            <input name="day" placeholder="DD" id="day">
+            <label style="color: red;" id="d"></label>
+        </form>
+        <form action="" class="calculator">
+            <label class="month" for="day">MONTH</label>
+            <input name="month" placeholder="MM" id="month">
+            <label style="color: red;" id="m"></label>
+        </form>
+        <form action="" class="calculator">
+            <label class="year" for="day">YEAR</label>
+            <input name="year" placeholder="YYYY" id="year">
+            <label style="color: red;" id="y"></label>
+        </form>
+      </div>
+      
+    
+      
+   
+    
+  
+
+    <div class="result">
+      <hr style="margin-left: 40px; margin-top: 32px;">
+      <div style="height: 0;">
+        <svg id="ent" xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg>
+      </div>
+      <ul style="list-style: none;">
+        <li><span>--</span>years</li>
+        <li><span>--</span> months</li>
+        <li><span>--</span> days</li>
+      </ul>
+    </div>
+  </div>
+  </div>
+  
+    
+
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/Olumightty">Ayoola Olumide</a>.
+  </div>
+
+  <script src="./index.js" charset="UTF-8"></script>
+</body>
+</html>
