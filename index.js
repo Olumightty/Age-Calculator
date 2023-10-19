@@ -56,7 +56,7 @@ function yearVerify(){
         return false;
     }
     
-    else if(year.value > actD.getFullYear() || year.value < 1 ){
+    else if(year.value > actD.getFullYear() || year.value < 1000 ){
         document.getElementById("y").innerHTML = "Must be a valid year";
         document.querySelector(".year").classList.add("red");
         inPut[2].classList.add("red-out");
