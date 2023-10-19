@@ -119,3 +119,33 @@ label{
     border: 0;
     outline: 1px solid red;
 }
+@media (max-width: 360px) and (min-width: 200px) {
+    .main{
+        scale: 0.4;
+    }
+}
+
+@media(max-width: 390px) and (min-width: 360px){
+    .main{
+        scale: 0.45;
+        position: relative;
+        left: -20px;
+        
+    }
+    .attribution{
+        scale: 0.7;
+    }
+}
+
+@media(max-width: 650px) and (min-width: 376px) {
+    .main{
+        width: 600px;
+        scale: 0.7;
+        position: relative;
+        left: -50px;
+    }
+    
+}
+
+
+

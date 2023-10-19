@@ -32,10 +32,7 @@ for(i = 0; i <3; i++){
             inPut[i].classList.remove("red-out");
         }
 
-        
-
     });
-
 
 }
 
@@ -66,6 +63,13 @@ function yearVerify(){
         return false;
     }
     
+    else if(year.value.includes(".")){
+        document.getElementById("y").innerHTML = "Must be a valid year";
+        document.querySelector(".year").classList.add("red");
+        inPut[2].classList.add("red-out");
+        return false;
+    }
+    
 
     else{
         return true;
@@ -81,6 +85,13 @@ function monthVerify(){
     }
 
     else if(month.value > 12 || month.value < 1){
+        document.getElementById("m").innerHTML = "Must be a valid month";
+        document.querySelector(".month").classList.add("red");
+        inPut[1].classList.add("red-out");
+        return false;
+    }
+
+    else if(month.value.includes(".")){
         document.getElementById("m").innerHTML = "Must be a valid month";
         document.querySelector(".month").classList.add("red");
         inPut[1].classList.add("red-out");
@@ -135,6 +146,14 @@ function dayVerify(){
             return true;
         }
     }
+
+    else if(day.value.includes(".")){
+        document.getElementById("d").innerHTML = "Must be a valid day";
+        document.querySelector(".day").classList.add("red");
+        inPut[0].classList.add("red-out");
+        return false;
+    }
+
     else{
         if(day.value > 31 || day.value < 1){
             document.getElementById("d").innerHTML = "Must be a valid day";
@@ -197,11 +216,40 @@ btn.addEventListener("click", function(){
         alert(theMonth);    
         alert(theDay);*/
 
-        document.querySelectorAll("span")[0].innerHTML = theYear;
-        document.querySelectorAll("span")[1].innerHTML = theMonth;
-        document.querySelectorAll("span")[2].innerHTML = theDay;
+        document.querySelectorAll("span")[0].innerText = 0;
+        document.querySelectorAll("span")[1].innerText = 0;
+        document.querySelectorAll("span")[2].innerText = 0;
+
+        document.querySelectorAll("span")[0].setAttribute("data-val", theYear);
+        document.querySelectorAll("span")[1].setAttribute("data-val", theMonth);
+        document.querySelectorAll("span")[2].setAttribute("data-val", theDay);
 
 
-        
+        let counters = document.querySelectorAll("span");
+        let speed = 10;
+
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const startValue = +counter.innerText;
+                const finalValue = +counter.getAttribute("data-val");
+                const inc = Math.ceil(finalValue / speed);
+
+                if(startValue < finalValue){
+                    counter.innerText = startValue + inc;
+                    setTimeout(updateCount, 100);
+
+                }
+                else{
+                    counter.innerText = finalValue;
+                }
+
+            }
+            updateCount();
+        })  
     }
 });
+
+
+
+
+
