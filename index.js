@@ -55,15 +55,15 @@ function yearVerify(){
         inPut[2].classList.add("red-out");
         return false;
     }
-    
-    else if(year.value > actD.getFullYear() || year.value < 1000 ){
+
+    else if(year.value.includes(".")){
         document.getElementById("y").innerHTML = "Must be a valid year";
         document.querySelector(".year").classList.add("red");
         inPut[2].classList.add("red-out");
         return false;
     }
     
-    else if(year.value.includes(".")){
+    else if(year.value > actD.getFullYear() || year.value < 1000 ){
         document.getElementById("y").innerHTML = "Must be a valid year";
         document.querySelector(".year").classList.add("red");
         inPut[2].classList.add("red-out");
@@ -84,6 +84,13 @@ function monthVerify(){
         return false;
     }
 
+    else if(month.value.includes(".")){
+        document.getElementById("m").innerHTML = "Must be a valid month";
+        document.querySelector(".month").classList.add("red");
+        inPut[1].classList.add("red-out");
+        return false;
+    }
+
     else if(month.value > 12 || month.value < 1){
         document.getElementById("m").innerHTML = "Must be a valid month";
         document.querySelector(".month").classList.add("red");
@@ -91,12 +98,7 @@ function monthVerify(){
         return false;
     }
 
-    else if(month.value.includes(".")){
-        document.getElementById("m").innerHTML = "Must be a valid month";
-        document.querySelector(".month").classList.add("red");
-        inPut[1].classList.add("red-out");
-        return false;
-    }
+    
 
     else{
         return true;
@@ -111,6 +113,14 @@ function dayVerify(){
         return false;
     }        
     
+    else if(day.value.includes(".")){
+        document.getElementById("d").innerHTML = "Must be a valid day";
+        document.querySelector(".day").classList.add("red");
+        inPut[0].classList.add("red-out");
+        return false;
+    }
+
+
     else if(month.value == 2){
         if(isLeapYear(year.value)){
             if(day.value > 29 || day.value < 1){
@@ -147,12 +157,7 @@ function dayVerify(){
         }
     }
 
-    else if(day.value.includes(".")){
-        document.getElementById("d").innerHTML = "Must be a valid day";
-        document.querySelector(".day").classList.add("red");
-        inPut[0].classList.add("red-out");
-        return false;
-    }
+    
 
     else{
         if(day.value > 31 || day.value < 1){
